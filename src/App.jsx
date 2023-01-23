@@ -65,6 +65,9 @@ function App() {
       }
       return filtered
     }
+    if(rating.length !== 0){
+      return sortedRating
+    }
     return arr
   },[genre, arr])
 
@@ -77,7 +80,7 @@ function App() {
   return (
     <div className="App m-auto">
       <div className="top flex">
-        <TextField id="outlined-basic" onFocus={() => setIsOpen(!isOpen)} label="Search" variant="outlined" onChange={e => setQuery(e.target.value )} />
+        <TextField id="outlined-basic" onFocus={() => setIsOpen(true)} label="Search" variant="outlined" onChange={e => setQuery(e.target.value )} />
         <WithSelects options={["action", "comedy", "thriller", "drama"]} state={genre} setState={setGenre} label={"Genre"} />
         <WithSelects options={["5", "6", "7", "8"]} state={rating} setState={setRating} label={"Rating"} />
       </div>
