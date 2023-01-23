@@ -87,7 +87,7 @@ function App() {
       <div className="left flex justify-between">
         <div style={ isOpen === false ? {display: "none"} : {display: "block"}} className="bot border-black border-solid border-2 w-56">
           {
-            searched.map((item, index) => isOpen ? <SearchedItem key={index} props={item}/> : "")
+            searched.length == 0 ? <h1>nothing found </h1> : searched.map((item, index) => isOpen ? <SearchedItem key={index} props={item}/> : "")
           }
         </div>
       </div>
